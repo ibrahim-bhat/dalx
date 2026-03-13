@@ -18,7 +18,9 @@ import {
   Star,
   Zap,
   Shield,
-  Globe
+  Globe,
+  Menu,
+  X
 } from 'lucide-react';
 
 const services = [
@@ -159,6 +161,7 @@ function CartoonAvatar({ gender, className = "w-24 h-24" }: { gender: "male" | "
 export default function App() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [activeTeamIndex, setActiveTeamIndex] = React.useState<number | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const teamSectionRef = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
@@ -200,6 +203,7 @@ export default function App() {
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsMobileMenuOpen(false);
               }}
               className="flex items-center gap-2 cursor-pointer"
               aria-label="Go to home"
@@ -286,7 +290,88 @@ export default function App() {
                 WhatsApp Connect
               </a>
             </div>
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className={[
+                "md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full transition-colors",
+                isScrolled ? "bg-brand-primary/10 text-brand-primary" : "bg-white/10 text-white"
+              ].join(" ")}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
+          {isMobileMenuOpen && (
+            <div className="md:hidden pb-4">
+              <div className="rounded-3xl border border-gray-100 bg-white shadow-xl p-4 flex flex-col gap-2">
+                <a
+                  href="#services"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
+                >
+                  Services
+                </a>
+                <a
+                  href="#portfolio"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
+                >
+                  Portfolio
+                </a>
+                <a
+                  href="#about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
+                >
+                  About
+                </a>
+                <a
+                  href="#team"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
+                >
+                  Our Team
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
+                >
+                  Contact
+                </a>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="mt-2 inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-2xl text-sm font-semibold hover:bg-[#1FB85A] transition-colors"
+                  aria-label="WhatsApp Connect"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="shrink-0"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M19.11 17.43c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.13-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.13-1.14-.42-2.17-1.33-.8-.71-1.35-1.59-1.51-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.07-.13-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16 0-.34 0-.52 0-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.9 4.6 4.06.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="M16.01 3.2C9.11 3.2 3.5 8.81 3.5 15.71c0 2.2.57 4.26 1.57 6.05L3.4 28.8l7.22-1.64a12.46 12.46 0 0 0 5.39 1.22h.01c6.9 0 12.51-5.61 12.51-12.51S22.92 3.2 16.01 3.2Zm0 22.06h-.01c-1.75 0-3.46-.47-4.95-1.35l-.35-.21-4.29.97.92-4.18-.23-.38a10.35 10.35 0 0 1-1.58-5.52c0-5.72 4.66-10.38 10.39-10.38 2.77 0 5.38 1.08 7.33 3.03a10.3 10.3 0 0 1 3.05 7.34c0 5.72-4.66 10.38-10.38 10.38Z"
+                    />
+                  </svg>
+                  WhatsApp Connect
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
