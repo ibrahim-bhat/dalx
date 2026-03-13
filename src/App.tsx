@@ -174,7 +174,7 @@ export default function App() {
   }, [activeTeamIndex]);
 
   const whatsappHref =
-    "https://wa.me/?text=" +
+    "https://wa.me/917006405667?text=" +
     encodeURIComponent("Hi DalX! I'm interested in your services. Can we connect?");
 
   React.useEffect(() => {
@@ -686,11 +686,11 @@ export default function App() {
                 <div className="space-y-6">
                   <div>
                     <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Email Us</p>
-                    <p className="text-2xl font-bold">hello@dalx.com</p>
+                    <p className="text-2xl font-bold">Hi@dalx.tech</p>
                   </div>
                   <div>
                     <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Visit Us</p>
-                    <p className="text-2xl font-bold">123 Digital Way, Tech City, TC 10101</p>
+                    <p className="text-2xl font-bold">01, Silicon House, Near Al-Farooq Masjid, Jawhar Nagar, Srinagar, Jammu and Kashmir, India</p>
                   </div>
                 </div>
               </div>
