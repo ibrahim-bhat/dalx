@@ -18,15 +18,23 @@ import {
   Star,
   Zap,
   Shield,
+  BarChart2,
   Globe,
   Menu,
-  X
+  X,
+  Film,
+  Mic,
+  Instagram,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Youtube
 } from 'lucide-react';
 
 const services = [
   {
-    title: "Ads & PPC",
-    description: "High-converting advertising campaigns across Google, Meta, and LinkedIn.",
+    title: "Performance Marketing with guaranteed ROI",
+    description: "We provide performance marketing services focused on delivering measurable results and maximum return on investment. Our campaigns are data-driven, carefully targeted, and continuously optimised to generate leads, conversions, and real business growth.",
     icon: Megaphone,
     color: "bg-blue-500/10 text-blue-600"
   },
@@ -47,6 +55,24 @@ const services = [
     description: "High-end film production, aerial shots, and cinematic storytelling.",
     icon: Camera,
     color: "bg-rose-500/10 text-rose-600"
+  },
+  {
+    title: "Documentaries",
+    description: "We produce compelling and well-researched documentaries that capture real stories, social issues, and important narratives with depth and authenticity.",
+    icon: Film,
+    color: "bg-red-500/10 text-red-600"
+  },
+  {
+    title: "End-to-End Podcast Customisation",
+    description: "We provide complete podcast customisation services from concept development to final distribution. Our team handles recording, editing, branding, and platform publishing.",
+    icon: Mic,
+    color: "bg-violet-500/10 text-violet-600"
+  },
+  {
+    title: "Digital Marketing",
+    description: "We provide comprehensive digital marketing services to help businesses build a strong online presence and reach the right audience.",
+    icon: BarChart2,
+    color: "bg-teal-500/10 text-teal-600"
   },
   {
     title: "Website Building",
@@ -72,6 +98,14 @@ const services = [
     icon: Database,
     color: "bg-amber-500/10 text-amber-600"
   }
+];
+
+const clients = [
+  "Kareems Srinagar",
+  "Berrg Naturals",
+  "Colossus Media",
+  "RZamba",
+  "Vision Business Group"
 ];
 
 const testimonials = [
@@ -484,6 +518,32 @@ export default function App() {
         </div>
       </section>
 
+      {/* Our Clients Section */}
+      <section className="py-16 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Clients</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Trusted by businesses across industries to deliver measurable digital growth.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            {clients.map((client, index) => (
+              <motion.div
+                key={client}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="flex items-center justify-center px-8 py-5 rounded-2xl border border-gray-200 bg-gray-50 hover:border-brand-primary hover:bg-brand-primary/5 transition-all shadow-sm min-w-[180px]"
+              >
+                <span className="text-base font-semibold text-gray-700">{client}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -825,6 +885,23 @@ export default function App() {
               <a href="#" className="hover:text-brand-primary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-brand-primary transition-colors">Terms of Service</a>
               <a href="#" className="hover:text-brand-primary transition-colors">Cookies</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="https://www.instagram.com/dalx.tech" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-brand-primary hover:text-white transition-all">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="https://www.facebook.com/dalx.tech" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-brand-primary hover:text-white transition-all">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="https://twitter.com/dalxtech" target="_blank" rel="noreferrer" aria-label="Twitter / X" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-brand-primary hover:text-white transition-all">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="https://www.linkedin.com/company/dalx" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-brand-primary hover:text-white transition-all">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://www.youtube.com/@dalxtech" target="_blank" rel="noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-brand-primary hover:text-white transition-all">
+                <Youtube className="w-4 h-4" />
+              </a>
             </div>
             <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} Dalx Digital Agency. All rights reserved.
