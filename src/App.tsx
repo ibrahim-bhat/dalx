@@ -20,21 +20,49 @@ import {
   Shield,
   Globe,
   Menu,
-  X
+  X,
+  Mic,
+  Film,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Youtube
 } from 'lucide-react';
 
 const services = [
   {
-    title: "Ads & PPC",
-    description: "High-converting advertising campaigns across Google, Meta, and LinkedIn.",
+    title: "Performance Marketing",
+    description:
+      "Performance marketing with guaranteed ROI: We provide performance marketing services focused on delivering measurable results and maximum return on investment. Our campaigns are data-driven, carefully targeted, and continuously optimised to generate leads, conversions, and real business growth.",
     icon: Megaphone,
     color: "bg-blue-500/10 text-blue-600"
+  },
+  {
+    title: "Documentaries",
+    description:
+      "Compelling, well-researched documentaries that capture real stories, social issues, and important narratives with depth and authenticity.",
+    icon: Film,
+    color: "bg-rose-500/10 text-rose-600"
+  },
+  {
+    title: "Podcast Customisation",
+    description:
+      "End-to-End Podcast Customisation: We provide complete podcast customisation services from concept development to final distribution. Our team handles recording, editing, branding, and platform publishing.",
+    icon: Mic,
+    color: "bg-purple-500/10 text-purple-600"
+  },
+  {
+    title: "Digital Marketing",
+    description:
+      "We provide comprehensive digital marketing services to help businesses build a strong online presence and reach the right audience.",
+    icon: TrendingUp,
+    color: "bg-emerald-500/10 text-emerald-600"
   },
   {
     title: "Video Editing",
     description: "Professional post-production for commercials, social media, and cinema.",
     icon: Video,
-    color: "bg-purple-500/10 text-purple-600"
+    color: "bg-fuchsia-500/10 text-fuchsia-600"
   },
   {
     title: "Graphic Design",
@@ -46,13 +74,13 @@ const services = [
     title: "Cinematography",
     description: "High-end film production, aerial shots, and cinematic storytelling.",
     icon: Camera,
-    color: "bg-rose-500/10 text-rose-600"
+    color: "bg-sky-500/10 text-sky-600"
   },
   {
     title: "Website Building",
     description: "Modern, responsive, and high-performance websites built for conversion.",
     icon: Monitor,
-    color: "bg-emerald-500/10 text-emerald-600"
+    color: "bg-teal-500/10 text-teal-600"
   },
   {
     title: "Custom Software",
@@ -245,6 +273,15 @@ export default function App() {
                 About
               </a>
               <a
+                href="#clients"
+                className={[
+                  "text-sm font-medium transition-colors",
+                  isScrolled ? "text-brand-primary hover:text-brand-primary/80" : "text-white hover:text-white/80"
+                ].join(" ")}
+              >
+                Our Clients
+              </a>
+              <a
                 href="#team"
                 className={[
                   "text-sm font-medium transition-colors",
@@ -305,7 +342,7 @@ export default function App() {
           </div>
           {isMobileMenuOpen && (
             <div className="md:hidden pb-4">
-              <div className="rounded-3xl border border-gray-100 bg-white shadow-xl p-4 flex flex-col gap-2">
+              <div className="rounded-3xl border border-brand-primary/25 bg-white shadow-xl p-4 flex flex-col gap-2">
                 <a
                   href="#services"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -326,6 +363,13 @@ export default function App() {
                   className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
                 >
                   About
+                </a>
+                <a
+                  href="#clients"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-4 py-3 rounded-2xl text-sm font-medium text-brand-primary hover:bg-brand-primary/5 transition-colors"
+                >
+                  Our Clients
                 </a>
                 <a
                   href="#team"
@@ -436,7 +480,7 @@ export default function App() {
                 </div>
               </div>
               {/* Floating Stats */}
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 hidden sm:block">
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-2xl border border-brand-primary/25 hidden sm:block">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-brand-accent/20 rounded-full flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-emerald-600" />
@@ -466,7 +510,7 @@ export default function App() {
               <motion.div 
                 key={index}
                 whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col"
+                className="bg-white p-8 rounded-3xl border border-brand-primary/25 shadow-sm hover:shadow-xl transition-all flex flex-col"
               >
                 <div className={`w-12 h-12 ${service.color} rounded-2xl flex items-center justify-center mb-6`}>
                   <service.icon className="w-6 h-6" />
@@ -652,7 +696,7 @@ export default function App() {
                       scale: isActive ? 1.08 : 1,
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className={`relative w-full min-h-[300px] rounded-3xl cursor-pointer select-none border-2 border-gray-200 overflow-hidden ${isActive ? "shadow-2xl ring-4 ring-brand-primary/30 z-10" : "shadow-md hover:shadow-xl"}`}
+                    className={`relative w-full min-h-[300px] rounded-3xl cursor-pointer select-none border border-brand-primary/25 overflow-hidden ${isActive ? "shadow-2xl ring-4 ring-brand-primary/30 z-10" : "shadow-md hover:shadow-xl"}`}
                     style={{
                       perspective: "1000px",
                       transformStyle: "preserve-3d",
@@ -723,7 +767,7 @@ export default function App() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-gray-50">
+      <section id="clients" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-1">
@@ -740,7 +784,7 @@ export default function App() {
             </div>
             <div className="lg:col-span-2 grid md:grid-cols-2 gap-8">
               {testimonials.map((t, i) => (
-                <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-brand-primary/10">
                   <p className="text-gray-600 italic mb-8">"{t.content}"</p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center">
@@ -771,7 +815,7 @@ export default function App() {
                 <div className="space-y-6">
                   <div>
                     <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Email Us</p>
-                    <p className="text-2xl font-bold">Hi@dalx.tech</p>
+                    <p className="text-2xl font-bold">hi@dalx.tech</p>
                   </div>
                   <div>
                     <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Visit Us</p>
@@ -820,6 +864,36 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
               <img src="/logo-footer.png" alt="DALX Logo" className="h-8 w-auto object-contain" />
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full border border-gray-200 bg-white text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full border border-gray-200 bg-white text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full border border-gray-200 bg-white text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full border border-gray-200 bg-white text-brand-primary flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
             </div>
             <div className="flex gap-8 text-sm font-medium text-gray-500">
               <a href="#" className="hover:text-brand-primary transition-colors">Privacy Policy</a>
