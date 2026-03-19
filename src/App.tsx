@@ -31,9 +31,9 @@ import {
 
 const services = [
   {
-    title: "Performance Marketing",
+    title: "Performance marketing with guaranteed ROI:",
     description:
-      "Performance marketing with guaranteed ROI: We provide performance marketing services focused on delivering measurable results and maximum return on investment. Our campaigns are data-driven, carefully targeted, and continuously optimised to generate leads, conversions, and real business growth.",
+      "We provide performance marketing services focused on delivering measurable results and maximum return on investment. Our campaigns are data-driven, carefully targeted, and continuously optimised to generate leads, conversions, and real business growth.",
     icon: Megaphone,
     color: "bg-blue-500/10 text-blue-600"
   },
@@ -45,9 +45,9 @@ const services = [
     color: "bg-rose-500/10 text-rose-600"
   },
   {
-    title: "Podcast Customisation",
+    title: "End-to-End Podcast Customisation",
     description:
-      "End-to-End Podcast Customisation: We provide complete podcast customisation services from concept development to final distribution. Our team handles recording, editing, branding, and platform publishing.",
+      "We provide complete podcast customisation services from concept development to final distribution. Our team handles recording, editing, branding, and platform publishing.",
     icon: Mic,
     color: "bg-purple-500/10 text-purple-600"
   },
