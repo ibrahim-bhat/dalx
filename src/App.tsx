@@ -146,7 +146,6 @@ const teamMembers = [
   { name: "Aamir Ganaie", role: "Tech Lead", gender: "male" as const },
   { name: "Shahjahan Mustafa", role: "HR", gender: "male" as const },
   { name: "Syed Saidi", role: "Script Writer", gender: "male" as const },
-  { name: "Basit Bedar", role: "Marketing Lead", gender: "male" as const },
   { name: "Mehraj", role: "Video Editor", gender: "male" as const },
   { name: "Ibrahim", role: "Full Stack Developer", gender: "male" as const },
   { name: "Khushboo", role: "Frontend Developer", gender: "female" as const },
