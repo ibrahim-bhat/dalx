@@ -152,7 +152,7 @@ const teamMembers = [
   { name: "Saima", role: "UI UX Designer", gender: "female" as const },
   { name: "Yahya", role: "Video Editing Intern", gender: "male" as const },
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
-  { name: "Mehtab Ali", role: "Creator", gender: "male" as const },
+  { name: "Mehtab Ali", role: "Creator", gender: "female" as const },
 ].map((m) => ({
   ...m,
   avatarSrc:
