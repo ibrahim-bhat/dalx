@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
-  Megaphone, 
-  Code2, 
-  Video, 
-  Palette, 
-  TrendingUp, 
+import {
+  Megaphone,
+  Code2,
+  Video,
+  Palette,
+  TrendingUp,
   ArrowRight,
   CheckCircle2,
   Monitor,
@@ -146,16 +146,17 @@ const teamMembers = [
   { name: "Aamir Ganaie", role: "Tech Lead", gender: "male" as const },
   { name: "Shahjahan Mustafa", role: "HR", gender: "male" as const },
   { name: "Syed Saidi", role: "Script Writer", gender: "male" as const },
-  { name: "Mehraj", role: "Video Editor", gender: "male" as const },
+  { name: "Uzair", role: "Video Editor", gender: "male" as const },
   { name: "Ibrahim", role: "Full Stack Developer", gender: "male" as const },
   { name: "Khushboo", role: "Frontend Developer", gender: "female" as const },
   { name: "Saima", role: "UI UX Designer", gender: "female" as const },
-  { name: "Sabia", role: "Social Media Intern", gender: "female" as const },
   { name: "Yahya", role: "Video Editing Intern", gender: "male" as const },
+  { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
+  { name: "Mehtab Ali", role: "Creator", gender: "male" as const },
 ].map((m) => ({
   ...m,
   avatarSrc:
-    m.name === "Khushboo" || m.name === "Saima" || m.name === "Sabia"
+    m.name === "Khushboo" || m.name === "Saima"
       ? "/team/avatar-female.png"
       : "/team/avatar-male.png"
 }));
@@ -422,7 +423,7 @@ export default function App() {
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -443,14 +444,14 @@ export default function App() {
                 Transforming brands through innovative tech, creative design, and strategic marketing. Your vision, our execution.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button 
+                <button
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="bg-brand-primary text-white px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-105 transition-transform group"
                 >
                   Start a Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button 
+                <button
                   onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
                   className="border-2 border-brand-primary px-8 py-4 rounded-full font-bold hover:bg-brand-primary hover:text-white transition-all"
                 >
@@ -458,15 +459,15 @@ export default function App() {
                 </button>
               </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
               <div className="aspect-square rounded-3xl overflow-hidden bg-gray-100 relative group">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
                   alt="Digital Agency Work"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
@@ -506,7 +507,7 @@ export default function App() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
                 className="bg-white p-8 rounded-3xl border border-brand-primary/25 shadow-sm hover:shadow-xl transition-all flex flex-col"
@@ -539,7 +540,7 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-12 relative">
             {/* Connector Line */}
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-100 -translate-y-1/2 z-0"></div>
-            
+
             {processSteps.map((step, index) => (
               <div key={index} className="relative z-10 text-center">
                 <div className="w-16 h-16 bg-white border-4 border-gray-50 shadow-lg rounded-full flex items-center justify-center mx-auto mb-6">
@@ -567,7 +568,7 @@ export default function App() {
               View All Projects
             </button>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-12">
             {[
               {
@@ -581,7 +582,7 @@ export default function App() {
                 image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1000"
               }
             ].map((project, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -589,8 +590,8 @@ export default function App() {
                 className="group cursor-pointer"
               >
                 <div className="aspect-16/10 rounded-3xl overflow-hidden bg-gray-100 mb-6">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
