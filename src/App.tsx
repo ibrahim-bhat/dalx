@@ -156,7 +156,7 @@ const teamMembers = [
 ].map((m) => ({
   ...m,
   avatarSrc:
-    m.name === "Khushboo" || m.name === "Saima"
+    m.name === "Khushboo" || m.name === "Saima" || m.name === "Mehtab Ali"
       ? "/team/avatar-female.png"
       : "/team/avatar-male.png"
 }));
