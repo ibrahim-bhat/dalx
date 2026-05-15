@@ -146,21 +146,28 @@ const teamMembers = [
   { name: "Aamir Ganaie", role: "Tech Lead", gender: "male" as const },
   { name: "Shahjahan Mustafa", role: "HR", gender: "male" as const },
   { name: "Syed Saidi", role: "Script Writer", gender: "male" as const },
-  { name: "Uzair", role: "Video Editor", gender: "male" as const },
-  { name: "Ibrahim", role: "Full Stack Developer", gender: "male" as const },
-  { name: "Khushboo", role: "Frontend Developer", gender: "female" as const },
-  { name: "Saima", role: "UI UX Designer", gender: "female" as const },
-  { name: "Yahya", role: "Video Editing Intern", gender: "male" as const },
+  { name: "Uzair shah", role: "Video Editor", gender: "male" as const },
+  { name: " Muhammad Ibrahim bhat", role: "Full Stack Developer", gender: "male" as const },
+  { name: "Khushboo Ramzan", role: "Frontend Developer", gender: "female" as const },
+  { name: "Saima Yousuf", role: "UI UX Designer", gender: "female" as const },
+  { name: "Yahya iqbal ", role: "Video Editing Intern", gender: "male" as const },
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
   { name: "Mehtab Ali", role: "Creator", gender: "female" as const },
-   { name: "Areeb", role: "Video Editing Intern", gender: "male" as const },
-].map((m) => ({
-  ...m,
-  avatarSrc:
-    m.name === "Khushboo" || m.name === "Saima" || m.name === "Mehtab Ali"
-      ? "/team/avatar-female.png"
-      : "/team/avatar-male.png"
-}));
+  { name: "Areeb Rashid ", role: "Video Editing Intern", gender: "male" as const },
+].map((m) => {
+  const images: Record<string, string> = {
+    "Khushboo Ramzan": "/team/khushboo.png",
+    "Sayeem": "/team/sayeem.jpg",
+    "Shahjahan Mustafa": "/team/mustafa.jpg",
+    "Aamir Ganaie": "/team/aamir.png",
+    "Syed Saidi": "/team/saidi.png"
+  };
+
+  return {
+    ...m,
+    avatarSrc: images[m.name] || (m.gender === "female" ? "/team/avatar-female.png" : "/team/avatar-male.png")
+  };
+});
 
 function CartoonAvatar({ gender, className = "w-24 h-24" }: { gender: "male" | "female"; className?: string }) {
   if (gender === "female") {
