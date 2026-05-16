@@ -154,13 +154,16 @@ const teamMembers = [
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
   { name: "Mehtab Ali", role: "Creator", gender: "female" as const },
   { name: "Areeb Rashid ", role: "Video Editing Intern", gender: "male" as const },
+   { name: " Junaid Wani", role: "Video Editor", gender: "male" as const },
 ].map((m) => {
   const images: Record<string, string> = {
-    "Khushboo Ramzan": "/team/khushboo.png",
+    "Khushboo Ramzan": "/team/khushboo.jpeg",
     "Sayeem": "/team/sayeem.jpg",
     "Shahjahan Mustafa": "/team/mustafa.jpg",
     "Aamir Ganaie": "/team/aamir.png",
-    "Syed Saidi": "/team/saidi.png"
+    "Syed Saidi": "/team/saidi.png",
+    "Saima Yousuf": "/team/saima.jpeg",
+    "Junaid Wani": "/team/junaid.jpeg"
   };
 
   return {
@@ -704,7 +707,7 @@ export default function App() {
                       scale: isActive ? 1.08 : 1,
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className={`relative w-full min-h-[300px] rounded-3xl cursor-pointer select-none border border-brand-primary/25 overflow-hidden ${isActive ? "shadow-2xl ring-4 ring-brand-primary/30 z-10" : "shadow-md hover:shadow-xl"}`}
+                    className={`relative w-full aspect-[4/5] min-h-[360px] rounded-3xl cursor-pointer select-none border border-brand-primary/25 overflow-hidden ${isActive ? "shadow-2xl ring-4 ring-brand-primary/30 z-10" : "shadow-md hover:shadow-xl"}`}
                     style={{
                       perspective: "1000px",
                       transformStyle: "preserve-3d",
@@ -721,49 +724,56 @@ export default function App() {
                       }}
                     >
                       <div
-                        className="absolute inset-0 rounded-3xl bg-white flex flex-col items-center justify-center text-center p-8"
+                        className="absolute inset-0 rounded-3xl bg-white flex flex-col overflow-hidden"
                         style={{
                           backfaceVisibility: "hidden",
                           WebkitBackfaceVisibility: "hidden",
                           transform: "rotateY(0deg)",
                         }}
                       >
-                        <div className="w-28 h-28 rounded-full bg-gray-100 flex items-center justify-center mb-6 overflow-hidden border-2 border-gray-100 shrink-0">
+                        <div className="w-full h-[65%] sm:h-[70%] bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 shrink-0 relative">
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
+                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 30%" : "center" }}
                               loading="lazy"
                             />
                           ) : (
                             <CartoonAvatar gender={member.gender} className="w-24 h-24" />
                           )}
                         </div>
-                        <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                        <p className="text-sm font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
+                        <div className="w-full h-[35%] sm:h-[30%] flex flex-col justify-center items-center text-center p-4 bg-white">
+                          <h3 className="text-lg sm:text-xl font-bold mb-1">{member.name}</h3>
+                          <p className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
+                        </div>
                       </div>
                       <div
-                        className="absolute inset-0 rounded-3xl bg-brand-primary flex flex-col items-center justify-center text-center p-6 overflow-hidden"
+                        className="absolute inset-0 rounded-3xl bg-brand-primary flex flex-col overflow-hidden"
                         style={{
                           backfaceVisibility: "hidden",
                           WebkitBackfaceVisibility: "hidden",
                           transform: "rotateY(180deg)",
                         }}
                       >
-                        <div className="w-full flex-1 min-h-0 flex items-center justify-center mb-4">
+                        <div className="w-full h-[65%] sm:h-[70%] bg-black/20 flex items-center justify-center overflow-hidden shrink-0 relative">
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="max-w-full max-h-[220px] w-auto h-auto object-contain rounded-2xl shadow-lg"
+                              className="w-full h-full object-cover"
+                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 30%" : "center" }}
+                              loading="lazy"
                             />
                           ) : (
-                            <CartoonAvatar gender={member.gender} className="w-32 h-32 opacity-90" />
+                            <CartoonAvatar gender={member.gender} className="w-24 h-24" />
                           )}
                         </div>
-                        <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>
-                        <p className="text-xs font-bold text-white/80 uppercase tracking-wider">{member.role}</p>
+                        <div className="w-full h-[35%] sm:h-[30%] flex flex-col justify-center items-center text-center p-4">
+                          <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{member.name}</h3>
+                          <p className="text-xs sm:text-sm font-bold text-white/80 uppercase tracking-wider">{member.role}</p>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
