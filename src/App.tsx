@@ -163,7 +163,7 @@ const teamMembers = [
     "Aamir Ganaie": "/team/aamir.png",
     "Syed Saidi": "/team/saidi.png",
     "Saima Yousuf": "/team/saima.jpeg",
-    "Junaid Wani": "/team/junaid.jpeg"
+    "Junaid Wani": "/team/junaid.jpeg",
   };
 
   return {
