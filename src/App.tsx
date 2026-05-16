@@ -154,7 +154,7 @@ const teamMembers = [
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
   { name: "Mehtab Ali", role: "Creator", gender: "female" as const },
   { name: "Areeb Rashid ", role: "Video Editing Intern", gender: "male" as const },
-   { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
+  { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
 ].map((m) => {
   const images: Record<string, string> = {
     "Khushboo Ramzan": "/team/khushboo.jpeg",
@@ -737,7 +737,7 @@ export default function App() {
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 30%" : "center" }}
+                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 15%" : "center" }}
                               loading="lazy"
                             />
                           ) : (
@@ -763,7 +763,7 @@ export default function App() {
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 30%" : "center" }}
+                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 15%" : "center" }}
                               loading="lazy"
                             />
                           ) : (
