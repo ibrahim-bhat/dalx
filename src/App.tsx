@@ -737,7 +737,7 @@ export default function App() {
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center top" : "center" }}
+                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 20%" : "center" }}
                               loading="lazy"
                             />
                           ) : (
@@ -763,7 +763,7 @@ export default function App() {
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center top" : "center" }}
+                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 20%" : "center" }}
                               loading="lazy"
                             />
                           ) : (
