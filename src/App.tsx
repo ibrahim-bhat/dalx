@@ -154,7 +154,7 @@ const teamMembers = [
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
   { name: "Mehtab Ali", role: "Creator", gender: "female" as const },
   { name: "Areeb Rashid ", role: "Video Editing Intern", gender: "male" as const },
-   { name: " Junaid Wani", role: "Video Editor", gender: "male" as const },
+   { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
 ].map((m) => {
   const images: Record<string, string> = {
     "Khushboo Ramzan": "/team/khushboo.jpeg",
