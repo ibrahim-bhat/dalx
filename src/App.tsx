@@ -157,7 +157,6 @@ const teamMembers = [
   { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
 ].map((m) => {
   const images: Record<string, string> = {
-    "Khushboo Ramzan": "/team/khushboo.jpeg",
     "Sayeem": "/team/sayeem.jpg",
     "Shahjahan Mustafa": "/team/mustafa.jpg",
     "Aamir Ganaie": "/team/aamir.png",
@@ -731,20 +730,20 @@ export default function App() {
                           transform: "rotateY(0deg)",
                         }}
                       >
-                        <div className={`w-full ${member.name === "Khushboo Ramzan" ? "h-[78%] sm:h-[82%]" : "h-[65%] sm:h-[70%]"} bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 shrink-0 relative`}>
+                        <div className="w-full h-[65%] sm:h-[70%] bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 shrink-0 relative">
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "50% 0%" : "center" }}
+                              style={{ objectPosition: "center" }}
                               loading="lazy"
                             />
                           ) : (
                             <CartoonAvatar gender={member.gender} className="w-24 h-24" />
                           )}
                         </div>
-                        <div className={`w-full ${member.name === "Khushboo Ramzan" ? "h-[22%] sm:h-[18%]" : "h-[35%] sm:h-[30%]"} flex flex-col justify-center items-center text-center p-4 bg-white`}>
+                        <div className="w-full h-[35%] sm:h-[30%] flex flex-col justify-center items-center text-center p-4 bg-white">
                           <h3 className="text-lg sm:text-xl font-bold mb-1">{member.name}</h3>
                           <p className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
                         </div>
@@ -763,7 +762,7 @@ export default function App() {
                               src={member.avatarSrc}
                               alt={member.name}
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: member.name === "Khushboo Ramzan" ? "center 8%" : "center" }}
+                              style={{ objectPosition: "center" }}
                               loading="lazy"
                             />
                           ) : (
