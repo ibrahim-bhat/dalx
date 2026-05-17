@@ -162,12 +162,18 @@ const teamMembers = [
     "Aamir Ganaie": "/team/aamir.png",
     "Syed Saidi": "/team/saidi.png",
     "Saima Yousuf": "/team/saima.jpeg",
-    "Junaid Wani": "/team/junaid.jpeg"
+    "Junaid Wani": "/team/junaid.jpeg",
+    "Khushboo Ramzan": "/team/khushboo.png"
+  };
+
+  const avatarFit: Record<string, "cover" | "contain"> = {
+    "Khushboo Ramzan": "contain"
   };
 
   return {
     ...m,
-    avatarSrc: images[m.name] || (m.gender === "female" ? "/team/avatar-female.png" : "/team/avatar-male.png")
+    avatarSrc: images[m.name] || (m.gender === "female" ? "/team/avatar-female.png" : "/team/avatar-male.png"),
+    avatarFit: avatarFit[m.name] ?? "cover"
   };
 });
 
@@ -735,8 +741,11 @@ export default function App() {
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="w-full h-full object-cover"
-                              style={{ objectPosition: "center" }}
+                              className="w-full h-full"
+                              style={{
+                                objectFit: member.avatarFit,
+                                objectPosition: "center"
+                              }}
                               loading="lazy"
                             />
                           ) : (
@@ -761,8 +770,11 @@ export default function App() {
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="w-full h-full object-cover"
-                              style={{ objectPosition: "center" }}
+                              className="w-full h-full"
+                              style={{
+                                objectFit: member.avatarFit,
+                                objectPosition: "center"
+                              }}
                               loading="lazy"
                             />
                           ) : (
