@@ -173,14 +173,19 @@ const teamMembers = [
   };
 
   const avatarImageOffset: Record<string, number> = {
-    "Khushboo Ramzan": 16
+    "Khushboo Ramzan": 24
+  };
+
+  const avatarContainerClass: Record<string, string> = {
+    "Khushboo Ramzan": "bg-[#1B3D6B]"
   };
 
   return {
     ...m,
     avatarSrc: images[m.name] || (m.gender === "female" ? "/team/avatar-female.png" : "/team/avatar-male.png"),
     avatarObjectPosition: avatarObjectPosition[m.name] ?? "center",
-    avatarImageOffset: avatarImageOffset[m.name] ?? 0
+    avatarImageOffset: avatarImageOffset[m.name] ?? 0,
+    avatarContainerClass: avatarContainerClass[m.name] ?? ""
   };
 });
 
@@ -743,7 +748,9 @@ export default function App() {
                           transform: "rotateY(0deg)",
                         }}
                       >
-                        <div className="w-full flex-[7] min-h-0 bg-gray-50 overflow-hidden border-b border-gray-100 shrink-0 relative">
+                        <div
+                          className={`w-full flex-[7] min-h-0 overflow-hidden border-b border-gray-100 shrink-0 relative ${member.avatarContainerClass || "bg-gray-50"}`}
+                        >
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
@@ -775,7 +782,9 @@ export default function App() {
                           transform: "rotateY(180deg)",
                         }}
                       >
-                        <div className="w-full flex-[7] min-h-0 bg-black/20 overflow-hidden shrink-0 relative">
+                        <div
+                          className={`w-full flex-[7] min-h-0 overflow-hidden shrink-0 relative ${member.avatarContainerClass || "bg-black/20"}`}
+                        >
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
