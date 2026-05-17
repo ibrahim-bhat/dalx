@@ -163,8 +163,8 @@ const teamMembers = [
     "Syed Saidi": "/team/saidi.png",
     "Saima Yousuf": "/team/saima.jpeg",
     "Junaid Wani": "/team/junaid.jpeg",
-    "Khushboo Ramzan": "/team/khushboo.png",
-    "Mehtab Ali": "/team/mehtab-ali.png"
+    "Mehtab Ali": "/team/mehtab-ali.png",
+    "Khushboo Ramzan": "/team/khushboo.png"
   };
 
   const avatarObjectPosition: Record<string, string> = {
