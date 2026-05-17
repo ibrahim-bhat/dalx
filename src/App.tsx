@@ -163,17 +163,19 @@ const teamMembers = [
     "Syed Saidi": "/team/saidi.png",
     "Saima Yousuf": "/team/saima.jpeg",
     "Junaid Wani": "/team/junaid.jpeg",
-    "Khushboo Ramzan": "/team/khushboo.png"
+    "Khushboo Ramzan": "/team/khushboo.png",
+    "Mehtab Ali": "/team/mehtab-ali.png"
   };
 
-  const avatarFit: Record<string, "cover" | "contain"> = {
-    "Khushboo Ramzan": "contain"
+  const avatarObjectPosition: Record<string, string> = {
+    "Khushboo Ramzan": "center 20%",
+    "Mehtab Ali": "center 25%"
   };
 
   return {
     ...m,
     avatarSrc: images[m.name] || (m.gender === "female" ? "/team/avatar-female.png" : "/team/avatar-male.png"),
-    avatarFit: avatarFit[m.name] ?? "cover"
+    avatarObjectPosition: avatarObjectPosition[m.name] ?? "center"
   };
 });
 
@@ -681,7 +683,7 @@ export default function App() {
               The people behind Dalx — creative, technical, and strategic minds working together to deliver excellence.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-stretch">
             {teamMembers.map((member, index) => {
               const isActive = activeTeamIndex === index;
               return (
@@ -692,7 +694,7 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`flex justify-center ${isActive ? "sm:col-span-2 lg:col-span-2" : ""}`}
+                  className={`flex w-full h-full ${isActive ? "sm:col-span-2 lg:col-span-2" : ""}`}
                 >
                   <motion.div
                     layout
@@ -712,7 +714,7 @@ export default function App() {
                       scale: isActive ? 1.08 : 1,
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className={`relative w-full aspect-[4/5] min-h-[360px] rounded-3xl cursor-pointer select-none border border-brand-primary/25 overflow-hidden ${isActive ? "shadow-2xl ring-4 ring-brand-primary/30 z-10" : "shadow-md hover:shadow-xl"}`}
+                    className={`relative w-full h-[400px] rounded-3xl cursor-pointer select-none border border-brand-primary/25 overflow-hidden ${isActive ? "shadow-2xl ring-4 ring-brand-primary/30 z-10" : "shadow-md hover:shadow-xl"}`}
                     style={{
                       perspective: "1000px",
                       transformStyle: "preserve-3d",
@@ -736,24 +738,21 @@ export default function App() {
                           transform: "rotateY(0deg)",
                         }}
                       >
-                        <div className="w-full h-[65%] sm:h-[70%] bg-gray-50 flex items-center justify-center overflow-hidden border-b border-gray-100 shrink-0 relative">
+                        <div className="w-full flex-[7] min-h-0 bg-gray-50 overflow-hidden border-b border-gray-100 shrink-0 relative">
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="w-full h-full"
-                              style={{
-                                objectFit: member.avatarFit,
-                                objectPosition: "center"
-                              }}
+                              className="w-full h-full object-cover"
+                              style={{ objectPosition: member.avatarObjectPosition }}
                               loading="lazy"
                             />
                           ) : (
                             <CartoonAvatar gender={member.gender} className="w-24 h-24" />
                           )}
                         </div>
-                        <div className="w-full h-[35%] sm:h-[30%] flex flex-col justify-center items-center text-center p-4 bg-white">
-                          <h3 className="text-lg sm:text-xl font-bold mb-1">{member.name}</h3>
+                        <div className="w-full flex-[3] min-h-0 flex flex-col justify-center items-center text-center px-4 py-3 bg-white shrink-0">
+                          <h3 className="text-base sm:text-lg font-bold mb-1 leading-tight line-clamp-2">{member.name}</h3>
                           <p className="text-xs sm:text-sm font-bold text-gray-500 uppercase tracking-wider">{member.role}</p>
                         </div>
                       </div>
@@ -765,24 +764,21 @@ export default function App() {
                           transform: "rotateY(180deg)",
                         }}
                       >
-                        <div className="w-full h-[65%] sm:h-[70%] bg-black/20 flex items-center justify-center overflow-hidden shrink-0 relative">
+                        <div className="w-full flex-[7] min-h-0 bg-black/20 overflow-hidden shrink-0 relative">
                           {member.avatarSrc ? (
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="w-full h-full"
-                              style={{
-                                objectFit: member.avatarFit,
-                                objectPosition: "center"
-                              }}
+                              className="w-full h-full object-cover"
+                              style={{ objectPosition: member.avatarObjectPosition }}
                               loading="lazy"
                             />
                           ) : (
                             <CartoonAvatar gender={member.gender} className="w-24 h-24" />
                           )}
                         </div>
-                        <div className="w-full h-[35%] sm:h-[30%] flex flex-col justify-center items-center text-center p-4">
-                          <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{member.name}</h3>
+                        <div className="w-full flex-[3] min-h-0 flex flex-col justify-center items-center text-center px-4 py-3 shrink-0">
+                          <h3 className="text-base sm:text-lg font-bold text-white mb-1 leading-tight line-clamp-2">{member.name}</h3>
                           <p className="text-xs sm:text-sm font-bold text-white/80 uppercase tracking-wider">{member.role}</p>
                         </div>
                       </div>
