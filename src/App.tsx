@@ -168,14 +168,19 @@ const teamMembers = [
   };
 
   const avatarObjectPosition: Record<string, string> = {
-    "Khushboo Ramzan": "center 62%",
+    "Khushboo Ramzan": "center 45%",
     "Mehtab Ali": "center 25%"
+  };
+
+  const avatarImageOffset: Record<string, number> = {
+    "Khushboo Ramzan": 16
   };
 
   return {
     ...m,
     avatarSrc: images[m.name] || (m.gender === "female" ? "/team/avatar-female.png" : "/team/avatar-male.png"),
-    avatarObjectPosition: avatarObjectPosition[m.name] ?? "center"
+    avatarObjectPosition: avatarObjectPosition[m.name] ?? "center",
+    avatarImageOffset: avatarImageOffset[m.name] ?? 0
   };
 });
 
@@ -743,8 +748,14 @@ export default function App() {
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="w-full h-full object-cover"
-                              style={{ objectPosition: member.avatarObjectPosition }}
+                              className="absolute left-0 w-full object-cover"
+                              style={{
+                                top: member.avatarImageOffset,
+                                height: member.avatarImageOffset
+                                  ? `calc(100% - ${member.avatarImageOffset}px)`
+                                  : "100%",
+                                objectPosition: member.avatarObjectPosition
+                              }}
                               loading="lazy"
                             />
                           ) : (
@@ -769,8 +780,14 @@ export default function App() {
                             <img
                               src={member.avatarSrc}
                               alt={member.name}
-                              className="w-full h-full object-cover"
-                              style={{ objectPosition: member.avatarObjectPosition }}
+                              className="absolute left-0 w-full object-cover"
+                              style={{
+                                top: member.avatarImageOffset,
+                                height: member.avatarImageOffset
+                                  ? `calc(100% - ${member.avatarImageOffset}px)`
+                                  : "100%",
+                                objectPosition: member.avatarObjectPosition
+                              }}
                               loading="lazy"
                             />
                           ) : (
