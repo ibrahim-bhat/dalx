@@ -168,7 +168,7 @@ const teamMembers = [
   };
 
   const avatarObjectPosition: Record<string, string> = {
-    "Khushboo Ramzan": "center 20%",
+    "Khushboo Ramzan": "center 38%",
     "Mehtab Ali": "center 25%"
   };
 
