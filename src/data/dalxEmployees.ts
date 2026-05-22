@@ -62,7 +62,7 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     password: "123456",
     role: "employee",
     workMode: "Office",
-    avatarSrc: "/team/yahya.jpg",
+    avatarSrc: "/team/yehya.jpeg",
   },
   {
     id: 8,
