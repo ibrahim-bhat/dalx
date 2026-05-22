@@ -170,7 +170,7 @@ const teamMembers = [
     "Mohammad Ibrahim Bhat": "/team/ibrahim-bhat.png",
     "Areeb Rashid": "/team/areeb-rashid.jpg",
     "Mohd Sahib Bhat": "/team/sahib-bhat.png",
-    "Yahya iqbal ": "/team/yahya.jpg"
+    "Yahya iqbal ": "/team/yehya.jpeg"
   };
 
   const avatarObjectPosition: Record<string, string> = {
