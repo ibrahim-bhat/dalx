@@ -177,7 +177,7 @@ const teamMembers = [
     "Mehtab Ali": "center 25%",
     "Uzair Shah": "center 5%",
     "Yahya iqbal ": "center 10%",
-    "Areeb Rashid": "center 15%"
+    "Areeb Rashid": "center 5%"
   };
 
   const avatarObjectFit: Record<string, "cover" | "contain"> = {
