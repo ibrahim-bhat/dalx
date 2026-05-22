@@ -147,14 +147,15 @@ const teamMembers = [
   { name: "Shahjahan Mustafa", role: "HR", gender: "male" as const },
   { name: "Syed Saidi", role: "Script Writer", gender: "male" as const },
   { name: "Uzair Shah", role: "Video Editor", gender: "male" as const },
-  { name: "Mohammad Ibrahim Bhat", role: "Full Stack Developer", gender: "male" as const },
+  { name: "Mohammad Ibrahim Bhat", role: "Full Stack software engineer", gender: "male" as const },
   { name: "Khushboo Ramzan", role: "Frontend Developer", gender: "female" as const },
-  { name: "Saima Yousuf", role: "UI UX Designer", gender: "female" as const },
+  { name: "Saima Yousuf", role: "The system stylish", gender: "female" as const },
   { name: "Yahya iqbal ", role: "Video Editing Intern", gender: "male" as const },
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
-  { name: "Mehtab Ali", role: "Creator", gender: "female" as const },
+  { name: "Mehtab Ali", role: "Crea", gender: "female" as const },
   { name: "Areeb Rashid", role: "Video Editing Intern", gender: "male" as const },
   { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
+  { name: "Mohd Sahib Bhat", role: "Content Trainee", gender: "male" as const },
 ].map((m) => {
   const images: Record<string, string> = {
     "Sayeem": "/team/sayeem.jpg",
@@ -167,7 +168,8 @@ const teamMembers = [
     "Khushboo Ramzan": "/team/khushboo.png",
     "Uzair Shah": "/team/uzair-shah.jpg",
     "Mohammad Ibrahim Bhat": "/team/ibrahim-bhat.png",
-    "Areeb Rashid": "/team/areeb-rashid.jpg"
+    "Areeb Rashid": "/team/areeb-rashid.jpg",
+    "Mohd Sahib Bhat": "/team/sahib-bhat.png"
   };
 
   const avatarObjectPosition: Record<string, string> = {

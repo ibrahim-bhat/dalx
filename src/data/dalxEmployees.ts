@@ -91,4 +91,13 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     workMode: "Office",
     avatarSrc: "/team/areeb-rashid.jpg",
   },
+  {
+    id: 11,
+    name: "Mohd Sahib Bhat",
+    email: "sahib@dalx.tech",
+    password: "123456",
+    role: "employee",
+    workMode: "Office",
+    avatarSrc: "/team/sahib-bhat.png",
+  },
 ];
