@@ -161,13 +161,13 @@ const teamMembers = [
     "Shahjahan Mustafa": "/team/mustafa.jpg",
     "Aamir Ganaie": "/team/aamir.png",
     "Syed Saidi": "/team/saidi.png",
-    "Saima Yousuf": "/team/saima-yousuf.png",
+    "Saima Yousuf": "/team/saima-yousuf.jpg",
     "Junaid Wani": "/team/junaid.jpeg",
     "Mehtab Ali": "/team/mehtab-ali.png",
     "Khushboo Ramzan": "/team/khushboo.png",
-    "Uzair Shah": "/team/uzair-shah.png",
+    "Uzair Shah": "/team/uzair-shah.jpg",
     "Mohammad Ibrahim Bhat": "/team/ibrahim-bhat.png",
-    "Areeb Rashid": "/team/areeb-rashid.png"
+    "Areeb Rashid": "/team/areeb-rashid.jpg"
   };
 
   const avatarObjectPosition: Record<string, string> = {

@@ -53,7 +53,7 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     password: "123456",
     role: "employee",
     workMode: "WFH",
-    avatarSrc: "/team/saima-yousuf.png",
+    avatarSrc: "/team/saima-yousuf.jpg",
   },
   {
     id: 7,
@@ -80,7 +80,7 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     password: "123456",
     role: "employee",
     workMode: "Office",
-    avatarSrc: "/team/uzair-shah.png",
+    avatarSrc: "/team/uzair-shah.jpg",
   },
   {
     id: 10,
@@ -89,6 +89,6 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     password: "123456",
     role: "employee",
     workMode: "Office",
-    avatarSrc: "/team/areeb-rashid.png",
+    avatarSrc: "/team/areeb-rashid.jpg",
   },
 ];
