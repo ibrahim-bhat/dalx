@@ -152,7 +152,7 @@ const teamMembers = [
   { name: "Saima Yousuf", role: "The system stylish", gender: "female" as const },
   { name: "Yahya iqbal ", role: "Video Editing Intern", gender: "male" as const },
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
-  { name: "Mehtab Ali", role: "Crea", gender: "female" as const },
+  { name: "Mehtab Ali", role: "Content and crew lead", gender: "female" as const },
   { name: "Areeb Rashid", role: "Video Editing Intern", gender: "male" as const },
   { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
   { name: "Mohd Sahib Bhat", role: "Content Trainee", gender: "male" as const },
@@ -169,12 +169,14 @@ const teamMembers = [
     "Uzair Shah": "/team/uzair-shah.jpg",
     "Mohammad Ibrahim Bhat": "/team/ibrahim-bhat.png",
     "Areeb Rashid": "/team/areeb-rashid.jpg",
-    "Mohd Sahib Bhat": "/team/sahib-bhat.png"
+    "Mohd Sahib Bhat": "/team/sahib-bhat.png",
+    "Yahya iqbal ": "/team/yahya.jpg"
   };
 
   const avatarObjectPosition: Record<string, string> = {
     "Mehtab Ali": "center 25%",
-    "Uzair Shah": "center 5%"
+    "Uzair Shah": "center 5%",
+    "Yahya iqbal ": "center 10%"
   };
 
   const avatarObjectFit: Record<string, "cover" | "contain"> = {
