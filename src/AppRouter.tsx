@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AttendancePage from "./AttendancePage";
 import LoginPage from "./LoginPage";
+import App from "./App";
 import { DALX_EMPLOYEES } from "./data/dalxEmployees";
 import { AttendanceRecord, EmployeeProfile } from "./types";
 
@@ -145,10 +146,10 @@ export default function AppRouter() {
       prev.map((record) =>
         record.id === id
           ? {
-              ...record,
-              status: "Late - Approved",
-              checkInTime: record.checkInTime ?? new Date().toISOString(),
-            }
+            ...record,
+            status: "Late - Approved",
+            checkInTime: record.checkInTime ?? new Date().toISOString(),
+          }
           : record
       )
     );
@@ -188,6 +189,7 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<App />} />
         <Route
           path="/login"
           element={currentUser ? <Navigate to={currentUser.role === "admin" ? "/admin" : "/attendance"} replace /> : <LoginPage onLogin={onLogin} />}
@@ -238,7 +240,7 @@ export default function AppRouter() {
             </RouteGate>
           }
         />
-        <Route path="*" element={<Navigate to={currentUser ? (currentUser.role === "admin" ? "/admin" : "/attendance") : "/login"} replace />} />
+        <Route path="*" element={<Navigate to={currentUser ? (currentUser.role === "admin" ? "/admin" : "/attendance") : "/"} replace />} />
       </Routes>
     </BrowserRouter>
   );
