@@ -149,12 +149,10 @@ const teamMembers = [
   { name: "Uzair Shah", role: "Video Editor", gender: "male" as const },
   { name: "Mohammad Ibrahim Bhat", role: "Full Stack software engineer", gender: "male" as const },
   { name: "Khushboo Ramzan", role: "Frontend Developer", gender: "female" as const },
-  { name: "Saima Yousuf", role: "The system stylish", gender: "female" as const },
   { name: "Yahya iqbal ", role: "Video Editing Intern", gender: "male" as const },
   { name: "Sayeem", role: "Cinematographer", gender: "male" as const },
   { name: "Mehtab Ali", role: "Content and crew lead", gender: "female" as const },
   { name: "Areeb Rashid", role: "Video Editing Intern", gender: "male" as const },
-  { name: "Junaid Wani", role: "Video Editor", gender: "male" as const },
   { name: "Mohd Sahib Bhat", role: "Content Trainee", gender: "male" as const },
 ].map((m) => {
   const images: Record<string, string> = {
@@ -162,8 +160,6 @@ const teamMembers = [
     "Shahjahan Mustafa": "/team/mustafa.jpg",
     "Aamir Ganaie": "/team/aamir.png",
     "Syed Saidi": "/team/saidi.png",
-    "Saima Yousuf": "/team/saima-yousuf.jpg",
-    "Junaid Wani": "/team/junaid.jpeg",
     "Mehtab Ali": "/team/mehtab-ali.png",
     "Khushboo Ramzan": "/team/khushboo.png",
     "Uzair Shah": "/team/uzair-shah.jpg",
@@ -177,7 +173,8 @@ const teamMembers = [
     "Mehtab Ali": "center 25%",
     "Uzair Shah": "center 5%",
     "Yahya iqbal ": "center 10%",
-    "Areeb Rashid": "center 5%"
+    "Areeb Rashid": "center 5%",
+    "Sayeem": "center 30%"
   };
 
   const avatarObjectFit: Record<string, "cover" | "contain"> = {

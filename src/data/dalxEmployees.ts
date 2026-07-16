@@ -46,15 +46,7 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     workMode: "WFH",
     avatarSrc: "/team/khushboo.png?v=3",
   },
-  {
-    id: 6,
-    name: "Saima Yousuf",
-    email: "saima@dalx.tech",
-    password: "123456",
-    role: "employee",
-    workMode: "WFH",
-    avatarSrc: "/team/saima-yousuf.jpg",
-  },
+
   {
     id: 7,
     name: "Yahya iqbal",
