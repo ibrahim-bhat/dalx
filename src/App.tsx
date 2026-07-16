@@ -173,7 +173,7 @@ const teamMembers = [
     "Mehtab Ali": "center 25%",
     "Uzair Shah": "center 5%",
     "Yahya iqbal ": "center 10%",
-    "Areeb Rashid": "center 5%",
+    "Areeb Rashid": "center 25%",
     "Sayeem": "center 30%"
   };
 
