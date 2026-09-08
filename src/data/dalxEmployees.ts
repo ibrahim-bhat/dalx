@@ -10,24 +10,7 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     workMode: "Office",
     avatarSrc: "/team/aamir.png",
   },
-  {
-    id: 2,
-    name: "Shahjahan Mustafa",
-    email: "mustafa@dalx.tech",
-    password: "123456",
-    role: "employee",
-    workMode: "Office",
-    avatarSrc: "/team/mustafa.jpg",
-  },
-  {
-    id: 3,
-    name: "Syed Saidi",
-    email: "saidi@dalx.tech",
-    password: "123456",
-    role: "employee",
-    workMode: "WFH",
-    avatarSrc: "/team/saidi.png",
-  },
+
   {
     id: 4,
     name: "Mohammad Ibrahim Bhat",
@@ -65,31 +48,5 @@ export const DALX_EMPLOYEES: EmployeeProfile[] = [
     workMode: "WFH",
     avatarSrc: "/team/mehtab-ali.png",
   },
-  {
-    id: 9,
-    name: "Uzair Shah",
-    email: "uzair@dalx.tech",
-    password: "123456",
-    role: "employee",
-    workMode: "Office",
-    avatarSrc: "/team/uzair-shah.jpg",
-  },
-  {
-    id: 10,
-    name: "Areeb Rashid",
-    email: "areeb@dalx.tech",
-    password: "123456",
-    role: "employee",
-    workMode: "Office",
-    avatarSrc: "/team/areeb-rashid.jpg",
-  },
-  {
-    id: 11,
-    name: "Mohd Sahib Bhat",
-    email: "sahib@dalx.tech",
-    password: "123456",
-    role: "employee",
-    workMode: "Office",
-    avatarSrc: "/team/sahib-bhat.png",
-  },
+
 ];
